@@ -72,7 +72,6 @@ GHS_SegmentationHeader_t SegmentationHeader;
 PLACE_IN_SECTION("BLE_DRIVER_CONTEXT") static GHS_RACP_Context_t GHS_RACP_Context;
 
 /* Private functions ---------------------------------------------------------*/
-extern uint8_t a_GHS_UpdateCharData[247];
 
 /* RACP response functions */
 tBleStatus GHS_RACP_send_number_of_stored_records_response(uint32_t numberOfRecords);

@@ -62,7 +62,6 @@ PLACE_IN_SECTION("BLE_DRIVER_CONTEXT") static GHS_CP_Context_t GHS_CP_Context;
 static tBleStatus GHS_CP_ResponseCode(uint8_t responseCode);
 
 /* Private functions ---------------------------------------------------------*/
-extern uint8_t a_GHS_UpdateCharData[247];
 
 /**
   * @brief SRCP response code to the previous request
@@ -73,14 +72,14 @@ static tBleStatus GHS_CP_ResponseCode(uint8_t responseCode)
 {
   tBleStatus retval = BLE_STATUS_FAILED;
   GHS_Data_t msg_conf;
-  uint8_t length = 0;
-
+  uint8_t GHS_UpdateCharData;
+  
   LOG_INFO_APP("GHS_CP_ResponseCode >>>\r\n");
 
-  a_GHS_UpdateCharData[length++] = responseCode;
+  GHS_UpdateCharData = responseCode;
 
-  msg_conf.Length = length;
-  msg_conf.p_Payload = a_GHS_UpdateCharData;
+  msg_conf.Length = 1;
+  msg_conf.p_Payload = &GHS_UpdateCharData;
   retval = GHS_UpdateValue(GHS_GHSCP, &msg_conf);
 
   LOG_INFO_APP("GHS_CP_ResponseCode <<<\r\n");

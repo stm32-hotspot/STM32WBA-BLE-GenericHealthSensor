@@ -112,7 +112,7 @@ typedef struct
 /* Private variables ---------------------------------------------------------*/
 static GHS_APP_Context_t GHS_APP_Context;
 
-uint8_t a_GHS_UpdateCharData[247];
+uint8_t a_GHS_UpdateCharData[312];
 
 /* USER CODE BEGIN PV */
 uint8_t GHS_APP_LHOIndex;
@@ -278,7 +278,7 @@ static uint8_t CompoundDiscreteEvent[] =
 static uint8_t SimpleArrayECGWaveform[] =
 {
   0x04,                                 /* Observation Class Type: Sample array observation */
-  0x97, 0x00,                           /* Length: 151 bytes */
+  0x08, 0x01,                           /* Length: 264 bytes */
   0x03, 0x00,                           /* Flags:  OBSERVATION_TYPE_PRESENT | TIME_STAMP_PRESENT */
   0x01, 0x01, 0x02, 0x00,               /* Observation Type: MDC_ECG_ELEC_POTL_I */               
   0x22,                                 /* Time Stamp */
@@ -292,7 +292,7 @@ static uint8_t SimpleArrayECGWaveform[] =
   0x02,                                 /*                    Bytes Per Sample 2 */
   0x74,                                 /*                    Number Of Samples 116 */
                                         /*                    Scaled Samples: */
-  0xF9, 0x07, 0xFB, 0x07, 0xF5, 0x07, 0xFF, 0x07, 0x0C, 0x08, 0x0E, 0x08, 0x03, 
+  0xF9, 0x07, 0xFB, 0x07, 0xF5, 0x07, 0xFF, 0x07, 0x0C, 0x08, 0x0E, 0x08, 0x03,  /* 232 values */
   0x08, 0xE7, 0x07, 0xDE, 0x07, 0xEB, 0x07, 0xF2, 0x07, 0xF1, 0x07, 0xF8, 0x07, 
   0xFF, 0x07, 0xFF, 0x07, 0x05, 0x08, 0x0A, 0x08, 0x10, 0x08, 0x0B, 0x08, 0x0F, 
   0x08, 0x0D, 0x08, 0x04, 0x08, 0x05, 0x08, 0xF6, 0x07, 0xAE, 0x07, 0x5D, 0x07, 
